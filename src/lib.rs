@@ -69,16 +69,19 @@ pub struct KDMAPIStream<'a> {
 }
 
 impl<'a> KDMAPIStream<'a> {
+    /// Calls `ResetKDMAPIStream`
     pub fn reset(&self) {
         unsafe {
             (self.binds.reset_kdmapi_stream)();
         }
     }
-
+    
+    /// Calls `SendDirectData`
     pub fn send_direct_data(&self, data: u32) -> u32 {
         unsafe { (self.binds.send_direct_data)(data) }
     }
 
+    /// Calls `SendDirectDataNoBuf`
     pub fn send_direct_data_no_buf(&self, data: u32) -> u32 {
         unsafe { (self.binds.send_direct_data_no_buf)(data) }
     }
