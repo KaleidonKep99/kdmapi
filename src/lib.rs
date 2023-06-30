@@ -44,7 +44,7 @@ impl KDMAPIBinds {
 }
 
 fn load_kdmapi_lib() -> Library {
-    unsafe { Library::new("OmniMIDI\\OmniMIDI").unwrap() }
+    unsafe { Library::new("OmniMIDI").unwrap() }
 }
 
 fn load_kdmapi_binds(lib: &'static Library) -> KDMAPIBinds {
